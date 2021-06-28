@@ -8,11 +8,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You will need a current version of [Java](https://www.java.com/), 1.8.0 was used during development, you will also need [Maven](https://maven.apache.org/), version 3.5.0 was used during development.
+You will need a current version of [Java](https://www.java.com/), 1.8.0 was used during development, and [Maven](https://maven.apache.org/), version 3.5.0 was used during development.
 
 ### Installing
 
-After cloning the repository you can run the project in a development tomcat server or build an executable JAHR.
+After cloning the repository you can run the project in a development tomcat server or build an executable JAR.
 
 ```bash
 # run project under http://localhost:8080/
@@ -29,9 +29,13 @@ java -jar target/api-0.0.1-SNAPSHOT.jar
 
 You can now run requests against the running project, e.g. `http://localhost:8080/helloapi/fibonacci/1`.
 
-## API Documentation
+### API Documentation
 
-The [API documentation](https://github.com/T0biWan/cloudkultur/http-client.md) is in OpenAPI v3.
+The [API documentation](https://github.com/T0biWan/cloudkultur/blob/main/api-docs.yaml) is in OpenAPI v3.
+
+### Example Request
+
+An example request and its respective response can be viewed [here](https://github.com/T0biWan/cloudkultur/blob/main/http-client.md).
 
 ## Built With
 
