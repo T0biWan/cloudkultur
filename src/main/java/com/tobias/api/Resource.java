@@ -9,11 +9,7 @@ public class Resource {
         this.output = output;
     }
 
-    public int getInput() {
-        return input;
-    }
+    public int getInput() { return input; }
 
-    public int getOutput() {
-        return output;
-    }
+    public int getOutput() { return output; }
 }

@@ -8,15 +8,8 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 
 @ControllerAdvice
 public class ApplicationExceptionHandler {
-    @ExceptionHandler({MethodArgumentTypeMismatchException.class})
-    public ResponseEntity<ApiError> handleException(MethodArgumentTypeMismatchException exception) {
-        HttpStatus status = HttpStatus.BAD_REQUEST;
-        ApiError apiError = new ApiError(status.value(), status.name(), "URL path variable 'n' must be an integer bigger than 0.");
-        return new ResponseEntity<>(apiError, status);
-    }
-
-    @ExceptionHandler({InvalidInputException.class})
-    public ResponseEntity<ApiError> handleException(InvalidInputException exception) {
+    @ExceptionHandler({MethodArgumentTypeMismatchException.class, InvalidInputException.class})
+    public ResponseEntity<ApiError> handleException(Exception exception) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
         ApiError apiError = new ApiError(status.value(), status.name(), "URL path variable 'n' must be an integer bigger than 0.");
         return new ResponseEntity<>(apiError, status);

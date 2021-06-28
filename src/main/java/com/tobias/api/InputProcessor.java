@@ -6,14 +6,9 @@ public class InputProcessor {
     }
 
     public static int fibonacci(int n) {
-        if ((n == 0) || (n == 1)) {
-            return n;
-        } else {
-            return fibonacci(n - 1) + fibonacci(n - 2);
-        }
+        if ((n == 0) || (n == 1)) return n;
+        else return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
-    public static boolean calculateFibonacci(int input) {
-        return input < 12;
-    }
+    public static boolean calculateFibonacci(int input) { return input < 12; }
 }

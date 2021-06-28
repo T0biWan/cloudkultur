@@ -1,7 +1,5 @@
 package com.tobias.api;
 
-import org.springframework.http.HttpStatus;
-
 public class ApiError {
     private final int status;
     private final String error;
@@ -13,15 +11,9 @@ public class ApiError {
         this.message = message;
     }
 
-    public int getStatus() {
-        return status;
-    }
+    public int getStatus() { return status; }
 
-    public String getError() {
-        return error;
-    }
+    public String getError() { return error; }
 
-    public String getMessage() {
-        return message;
-    }
+    public String getMessage() { return message; }
 }

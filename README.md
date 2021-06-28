@@ -1,2 +1,1 @@
-# cloudkultur
-coding challenge: REST Backend API
+# cloudkultur - coding challenge: REST Backend API
