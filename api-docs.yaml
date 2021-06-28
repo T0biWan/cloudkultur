@@ -1,0 +1,61 @@
+openapi: 3.0.1
+info:
+  title: cloudkultur coding challenge
+  version: 1.0.0
+  description: A sample REST API Backend to calculate fibonacci for certain values.
+servers:
+- url: http://localhost:8080/
+  description: Generated tomcat server url
+paths:
+  /helloapi/fibonacci/{n}:
+    get:
+      description: Returns the fibonacci value for the given parameter 'n', or the value 100 if the given paramter is >= 12. Returns an error for parameters that are either not an integer or a number not bigger than 0.
+      parameters:
+      - name: "n"
+        in: path
+        description: An integer bigger than zero
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+              example:
+                input: 1
+                output: 1
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: 400
+                error: BAD_REQUEST
+                message: URL path variable 'n' must be an integer bigger than 0.
+components:
+  schemas:
+    Resource:
+      type: object
+      properties:
+        input:
+          type: integer
+          format: int32
+        output:
+          type: integer
+          format: int32
+    Error:
+      type: object
+      properties:
+        status:
+          type: integer
+          format: int32
+        error:
+          type: string
+        message:
+          type: string
