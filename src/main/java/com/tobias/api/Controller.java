@@ -10,7 +10,13 @@ public class Controller {
     @GetMapping("helloapi/fibonacci/{n}")
     public Resource resource(@PathVariable int n) throws InvalidInputException {
         if (InputProcessor.inputIsValid(n)) {
-            int output = InputProcessor.fibonacci(n);
+            int output;
+            if (InputProcessor.calculateFibonacci(n)) {
+                output = InputProcessor.fibonacci(n);
+            } else {
+                output = 100;
+            }
+
             return new Resource(n, output);
         } else {
             throw new InvalidInputException();

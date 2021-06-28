@@ -12,4 +12,8 @@ public class InputProcessor {
             return fibonacci(n - 1) + fibonacci(n - 2);
         }
     }
+
+    public static boolean calculateFibonacci(int input) {
+        return input < 12;
+    }
 }
